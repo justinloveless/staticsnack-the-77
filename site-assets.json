@@ -124,7 +124,8 @@
                   "type": "string"
                 },
                 "bio": {
-                  "type": "string"
+                  "type": "string",
+                  "multiline": true
                 },
                 "image": {
                   "type": "string",
