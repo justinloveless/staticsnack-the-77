@@ -169,7 +169,8 @@
                   "format": "date"
                 },
                 "time": {
-                  "type": "string"
+                  "type": "string",
+                  "format": "time"
                 },
                 "venue": {
                   "type": "string"
@@ -182,7 +183,8 @@
                   "format": "uri"
                 },
                 "description": {
-                  "type": "string"
+                  "type": "string",
+                  "multiline": true
                 }
               },
               "required": [
