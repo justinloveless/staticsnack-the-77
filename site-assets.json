@@ -9,7 +9,28 @@
       "description": "Band name, tagline, and general configuration",
       "handler": "handlers/band-config.js",
       "maxSize": 5120,
-      "allowedExtensions": [".json"]
+      "allowedExtensions": [
+        ".json"
+      ],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "bandName": {
+            "type": "string"
+          },
+          "tagline": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "bandName",
+          "tagline",
+          "description"
+        ]
+      }
     },
     {
       "path": "content/hero.json",
@@ -18,7 +39,29 @@
       "description": "Hero section title, subtitle, and video URL",
       "handler": "handlers/hero.js",
       "maxSize": 2048,
-      "allowedExtensions": [".json"]
+      "allowedExtensions": [
+        ".json"
+      ],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "videoUrl": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "title",
+          "subtitle",
+          "videoUrl"
+        ]
+      }
     },
     {
       "path": "content/about.json",
@@ -27,7 +70,34 @@
       "description": "Band description, story, and achievements",
       "handler": "handlers/about.js",
       "maxSize": 10240,
-      "allowedExtensions": [".json"]
+      "allowedExtensions": [
+        ".json"
+      ],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "image": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": {
+            "type": "string"
+          },
+          "story": {
+            "type": "string"
+          },
+          "achievements": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "image",
+          "description",
+          "story",
+          "achievements"
+        ]
+      }
     },
     {
       "path": "content/members.json",
@@ -36,7 +106,44 @@
       "description": "Information about each band member",
       "handler": "handlers/members.js",
       "maxSize": 20480,
-      "allowedExtensions": [".json"]
+      "allowedExtensions": [
+        ".json"
+      ],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "bio": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              "required": [
+                "name",
+                "role",
+                "bio",
+                "image"
+              ]
+            }
+          }
+        },
+        "required": [
+          "members"
+        ]
+      }
     },
     {
       "path": "content/gigs.json",
@@ -45,7 +152,53 @@
       "description": "Calendar of upcoming shows and performances",
       "handler": "handlers/gigs.js",
       "maxSize": 20480,
-      "allowedExtensions": [".json"]
+      "allowedExtensions": [
+        ".json"
+      ],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "gigs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "time": {
+                  "type": "string"
+                },
+                "venue": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "ticketUrl": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "date",
+                "time",
+                "venue",
+                "location",
+                "ticketUrl",
+                "description"
+              ]
+            }
+          }
+        },
+        "required": [
+          "gigs"
+        ]
+      }
     },
     {
       "path": "content/merch.json",
@@ -54,7 +207,44 @@
       "description": "Band merchandise items",
       "handler": "handlers/merch.js",
       "maxSize": 20480,
-      "allowedExtensions": [".json"]
+      "allowedExtensions": [
+        ".json"
+      ],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "price",
+                "image",
+                "description"
+              ]
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
     },
     {
       "path": "content/music-platforms.json",
@@ -63,7 +253,44 @@
       "description": "Links to music streaming platforms",
       "handler": "handlers/music-platforms.js",
       "maxSize": 5120,
-      "allowedExtensions": [".json"]
+      "allowedExtensions": [
+        ".json"
+      ],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "platforms": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "icon": {
+                  "type": "string"
+                },
+                "color": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "url",
+                "icon",
+                "color"
+              ]
+            }
+          }
+        },
+        "required": [
+          "platforms"
+        ]
+      }
     },
     {
       "path": "content/social.json",
@@ -72,7 +299,40 @@
       "description": "Social media links for the band",
       "handler": "handlers/social.js",
       "maxSize": 5120,
-      "allowedExtensions": [".json"]
+      "allowedExtensions": [
+        ".json"
+      ],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "platform": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "platform",
+                "url",
+                "icon"
+              ]
+            }
+          }
+        },
+        "required": [
+          "links"
+        ]
+      }
     }
   ]
 }
