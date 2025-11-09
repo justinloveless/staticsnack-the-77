@@ -1,0 +1,28 @@
+{
+  "members": [
+    {
+      "name": "Alex Johnson",
+      "role": "Lead Vocals & Guitar",
+      "bio": "Alex brings powerful vocals and dynamic guitar work to the band. With over 10 years of performing experience, they're the heart of our sound.",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"
+    },
+    {
+      "name": "Sam Martinez",
+      "role": "Bass Guitar",
+      "bio": "Sam's groovy bass lines provide the foundation for our music. Their stage presence and musicality keep the energy flowing throughout every performance.",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400"
+    },
+    {
+      "name": "Jordan Taylor",
+      "role": "Drums",
+      "bio": "Jordan's powerful and precise drumming drives our rhythm section. They bring intensity and creativity to every song, making each performance unforgettable.",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400"
+    },
+    {
+      "name": "Casey Williams",
+      "role": "Lead Guitar",
+      "bio": "Casey's electrifying guitar solos and melodic riffs add depth and excitement to our sound. Their technical skill and passion shine through in every performance.",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "modern-blog-template",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Modern blog static site template with dynamic asset loading and JSON-based content management",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "init": "npm install && npx -p dynaloader init",
+    "generate-schema": "npx -p dynaloader generate-schema",
+    "add-asset": "npx -p dynaloader add-asset"
+  },
+  "keywords": [
+    "template",
+    "static-site",
+    "json",
+    "content-management"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dynaloader": "^1.1.0",
+    "inquirer": "^8.2.5"
+  },
+  "devDependencies": {
+    "vite": "^7.2.1"
+  }
+}

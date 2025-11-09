@@ -1,0 +1,8 @@
+{
+  "name": "Jane Doe",
+  "bio": "I'm a passionate writer, developer, and lifelong learner. I love exploring new technologies, sharing what I learn, and connecting with like-minded people. When I'm not writing or coding, you can find me hiking, reading, or experimenting with new recipes in the kitchen.",
+  "role": "Writer & Developer",
+  "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+  "email": "jane@example.com",
+  "location": "San Francisco, CA"
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Understanding Async/Await in JavaScript",
+  "slug": "javascript-async-await",
+  "excerpt": "Demystifying asynchronous JavaScript with async/await. Learn how to write cleaner, more readable asynchronous code.",
+  "content": "# Understanding Async/Await in JavaScript\n\nAsynchronous programming in JavaScript can be tricky, but async/await makes it much more manageable and readable.\n\n## The Problem with Callbacks\n\nBefore async/await, we had callbacks and promises. While promises were an improvement over callbacks, async/await takes it to the next level.\n\n## What is Async/Await?\n\nAsync/await is syntactic sugar built on top of promises. It allows you to write asynchronous code that looks and behaves like synchronous code.\n\n## Basic Usage\n\n```javascript\nasync function fetchData() {\n  try {\n    const response = await fetch('https://api.example.com/data');\n    const data = await response.json();\n    return data;\n  } catch (error) {\n    console.error('Error:', error);\n  }\n}\n```\n\n## Key Benefits\n\n1. **Cleaner Code** - No more callback hell or long promise chains\n2. **Better Error Handling** - Use try/catch blocks naturally\n3. **Easier Debugging** - Stack traces are more meaningful\n4. **More Readable** - Code flows logically from top to bottom\n\n## Common Patterns\n\n### Sequential Execution\n```javascript\nconst data1 = await fetchData1();\nconst data2 = await fetchData2(data1);\n```\n\n### Parallel Execution\n```javascript\nconst [data1, data2] = await Promise.all([\n  fetchData1(),\n  fetchData2()\n]);\n```\n\n## Best Practices\n\n- Always use try/catch for error handling\n- Don't forget to await your promises\n- Use Promise.all for parallel operations\n- Be careful with async functions in loops\n\n## Conclusion\n\nAsync/await is a game-changer for JavaScript developers. It makes asynchronous code more readable and maintainable. Start using it in your projects today!",
+  "author": "Jane Doe",
+  "date": "2024-01-25",
+  "tags": ["javascript", "async", "tutorial"],
+  "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop",
+  "readTime": "7 min read",
+  "featured": false
+}

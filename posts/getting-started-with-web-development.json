@@ -1,0 +1,12 @@
+{
+  "title": "Getting Started with Modern Web Development",
+  "slug": "getting-started-with-web-development",
+  "excerpt": "A comprehensive guide to beginning your journey in web development with the latest tools and best practices.",
+  "content": "# Getting Started with Modern Web Development\n\nWeb development has never been more exciting! With modern tools and frameworks, building beautiful and functional websites is more accessible than ever.\n\n## Why Learn Web Development?\n\nWeb development is one of the most versatile and in-demand skills in tech today. Whether you want to build your own projects, freelance, or join a company, web development opens countless doors.\n\n## Essential Technologies\n\n### HTML & CSS\nThe foundation of every website. HTML provides structure, while CSS brings your designs to life.\n\n### JavaScript\nThe programming language of the web. JavaScript makes your sites interactive and dynamic.\n\n### Modern Frameworks\nTools like React, Vue, and Angular help you build complex applications more efficiently.\n\n## Getting Started\n\n1. **Start with the basics** - Learn HTML, CSS, and JavaScript fundamentals\n2. **Build projects** - Apply what you learn by creating real websites\n3. **Join the community** - Connect with other developers and learn together\n4. **Never stop learning** - Technology evolves rapidly, stay curious!\n\n## Resources\n\n- MDN Web Docs\n- freeCodeCamp\n- The Odin Project\n- Frontend Mentor\n\nRemember, everyone starts as a beginner. The key is consistency and practice. Happy coding!",
+  "author": "Jane Doe",
+  "date": "2024-01-15",
+  "tags": ["web development", "tutorial", "beginners"],
+  "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=400&fit=crop",
+  "readTime": "5 min read",
+  "featured": true
+}

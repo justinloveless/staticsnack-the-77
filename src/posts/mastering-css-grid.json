@@ -1,0 +1,12 @@
+{
+  "title": "Mastering CSS Grid: A Complete Guide",
+  "slug": "mastering-css-grid",
+  "excerpt": "Learn how to create complex, responsive layouts with ease using CSS Grid. From basics to advanced techniques.",
+  "content": "# Mastering CSS Grid\n\nCSS Grid has revolutionized how we create layouts on the web. It's powerful, flexible, and surprisingly easy to learn.\n\n## What is CSS Grid?\n\nCSS Grid is a two-dimensional layout system that allows you to create complex layouts with rows and columns. Unlike Flexbox, which is primarily one-dimensional, Grid excels at creating intricate page layouts.\n\n## Basic Concepts\n\n### Grid Container\nThe parent element that defines the grid. Use `display: grid` to create one.\n\n### Grid Items\nThe direct children of the grid container. These are automatically placed in the grid.\n\n### Grid Lines\nThe dividing lines that make up the structure of the grid.\n\n## Practical Examples\n\n### Simple Grid Layout\n```css\n.container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 20px;\n}\n```\n\n### Responsive Grid\n```css\n.container {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  gap: 20px;\n}\n```\n\n## Advanced Techniques\n\n- Grid areas for semantic layouts\n- Subgrid for nested grids\n- Grid template areas for complex designs\n\n## Conclusion\n\nCSS Grid is an essential tool for modern web developers. With practice, you'll be creating beautiful, responsive layouts in no time!",
+  "author": "Jane Doe",
+  "date": "2024-01-20",
+  "tags": ["css", "web design", "tutorial"],
+  "image": "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&h=400&fit=crop",
+  "readTime": "8 min read",
+  "featured": false
+}

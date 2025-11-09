@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Band</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="/asset-loader.js"></script>
+    <script type="module" src="/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .band-title {
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.05em;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 2;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-section {
+            display: none;
+        }
+        
+        .page-section.active {
+            display: block;
+        }
+        
+        .music-platform-link {
+            transition: all 0.3s ease;
+        }
+        
+        .music-platform-link:hover {
+            transform: scale(1.1);
+        }
+        
+        .gig-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .merch-card {
+            overflow: hidden;
+        }
+        
+        .merch-card img {
+            transition: transform 0.5s ease;
+        }
+        
+        .merch-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .member-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .member-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+        
+        .member-card:hover::before {
+            opacity: 1;
+        }
+        
+        .member-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: 2;
+        }
+        
+        .member-card:hover .member-info {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="bg-black bg-opacity-80 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold gradient-text band-title" id="band-name">Band Name</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" onclick="showPage('home'); return false;" class="nav-link text-gray-300 hover:text-white transition px-3 py-2">Home</a>
+                    <a href="#" onclick="showPage('about'); return false;" class="nav-link text-gray-300 hover:text-white transition px-3 py-2">About</a>
+                    <a href="#" onclick="showPage('members'); return false;" class="nav-link text-gray-300 hover:text-white transition px-3 py-2">Members</a>
+                    <a href="#" onclick="showPage('calendar'); return false;" class="nav-link text-gray-300 hover:text-white transition px-3 py-2">Calendar</a>
+                    <a href="#" onclick="showPage('merch'); return false;" class="nav-link text-gray-300 hover:text-white transition px-3 py-2">Merch</a>
+                    <a href="#" onclick="showPage('contact'); return false;" class="nav-link text-gray-300 hover:text-white transition px-3 py-2">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-300" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-95 p-4">
+            <div class="flex flex-col space-y-3">
+                <a href="#" onclick="showPage('home'); return false;" class="text-gray-300 hover:text-white transition">Home</a>
+                <a href="#" onclick="showPage('about'); return false;" class="text-gray-300 hover:text-white transition">About</a>
+                <a href="#" onclick="showPage('members'); return false;" class="text-gray-300 hover:text-white transition">Members</a>
+                <a href="#" onclick="showPage('calendar'); return false;" class="text-gray-300 hover:text-white transition">Calendar</a>
+                <a href="#" onclick="showPage('merch'); return false;" class="text-gray-300 hover:text-white transition">Merch</a>
+                <a href="#" onclick="showPage('contact'); return false;" class="text-gray-300 hover:text-white transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home" class="page-section active">
+        <!-- Hero Section with Video -->
+        <section class="hero-video-container">
+            <video id="hero-video" class="hero-video" autoplay muted loop playsinline>
+                <source id="hero-video-source" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content h-full flex items-center justify-center">
+                <div class="text-center animate-fade-in px-4">
+                    <h1 class="text-6xl md:text-8xl font-black mb-6 band-title text-white" id="hero-title">
+                        Band Name
+                    </h1>
+                    <p class="text-2xl md:text-3xl text-gray-200 mb-8 max-w-3xl mx-auto" id="hero-subtitle">
+                        Live Music • Original Sound • Unforgettable Shows
+                    </p>
+                    <div class="flex justify-center gap-4 flex-wrap">
+                        <a href="#" onclick="showPage('calendar'); return false;" class="bg-gradient-to-r from-pink-500 to-red-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition transform hover:scale-105">
+                            See Us Live
+                        </a>
+                        <a href="#" onclick="showPage('contact'); return false;" class="bg-transparent text-white px-10 py-4 rounded-full font-bold text-lg border-2 border-white hover:bg-white hover:text-black transition">
+                            Book Us
+                        </a>
+                    </div>
+                    <div id="music-platforms" class="mt-12 flex justify-center gap-6 flex-wrap">
+                        <!-- Music platform links will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- About Page -->
+    <section id="about" class="page-section py-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-4 band-title gradient-text">About Us</h2>
+            </div>
+            <div id="about-content" class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- About content will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Page -->
+    <section id="members" class="page-section py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-4 band-title gradient-text">Meet the Band</h2>
+                <p class="text-xl text-gray-400">The talented musicians behind the music</p>
+            </div>
+            <div id="members-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Members will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Page -->
+    <section id="calendar" class="page-section py-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-4 band-title gradient-text">Upcoming Shows</h2>
+                <p class="text-xl text-gray-400">Catch us live at these venues</p>
+            </div>
+            <div id="gigs-list" class="space-y-6">
+                <!-- Gigs will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Merch Page -->
+    <section id="merch" class="page-section py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-4 band-title gradient-text">Merchandise</h2>
+                <p class="text-xl text-gray-400">Show your support with our official gear</p>
+            </div>
+            <div id="merch-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Merch items will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page-section py-20 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-4 band-title gradient-text">Book Us</h2>
+                <p class="text-xl text-gray-400">Ready to bring the energy to your event? Get in touch!</p>
+            </div>
+            <div id="contact-form-container" class="bg-black bg-opacity-50 backdrop-blur-md rounded-2xl p-8 border border-gray-800">
+                <!-- Contact form will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white font-bold mb-4 band-title text-xl" id="footer-band-name">Band Name</h3>
+                    <p class="text-gray-400" id="footer-description">Making music that moves you.</p>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" onclick="showPage('home'); return false;" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#" onclick="showPage('about'); return false;" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="#" onclick="showPage('members'); return false;" class="text-gray-400 hover:text-white transition">Members</a></li>
+                        <li><a href="#" onclick="showPage('calendar'); return false;" class="text-gray-400 hover:text-white transition">Calendar</a></li>
+                        <li><a href="#" onclick="showPage('merch'); return false;" class="text-gray-400 hover:text-white transition">Merch</a></li>
+                        <li><a href="#" onclick="showPage('contact'); return false;" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div id="social-links">
+                    <h3 class="text-white font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4 flex-wrap">
+                        <!-- Social links will be injected here -->
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; <span id="current-year"></span> <span id="footer-copyright-name">Band Name</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('text-white', 'border-b-2', 'border-white');
+                link.classList.add('text-gray-300');
+            });
+            
+            // Close mobile menu
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+        
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Make function globally available
+        window.showPage = showPage;
+    </script>
+</body>
+
+</html>>

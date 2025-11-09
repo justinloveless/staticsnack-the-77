@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "name": "Band T-Shirt",
+      "price": "$25",
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400",
+      "description": "Classic black t-shirt with band logo"
+    },
+    {
+      "name": "Hoodie",
+      "price": "$45",
+      "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400",
+      "description": "Comfortable hoodie featuring our album artwork"
+    },
+    {
+      "name": "Vinyl Record",
+      "price": "$30",
+      "image": "https://images.unsplash.com/photo-1605648916362-25852553e03f?w=400",
+      "description": "Limited edition vinyl of our latest album"
+    },
+    {
+      "name": "CD",
+      "price": "$15",
+      "image": "https://images.unsplash.com/photo-1605648916362-25852553e03f?w=400",
+      "description": "Physical copy of our full-length album"
+    },
+    {
+      "name": "Poster",
+      "price": "$12",
+      "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400",
+      "description": "24x36 inch concert poster"
+    },
+    {
+      "name": "Stickers Pack",
+      "price": "$8",
+      "image": "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=400",
+      "description": "Set of 5 band logo stickers"
+    },
+    {
+      "name": "Tote Bag",
+      "price": "$18",
+      "image": "https://images.unsplash.com/photo-1591561954555-607968f989c3?w=400",
+      "description": "Eco-friendly canvas tote with band design"
+    },
+    {
+      "name": "Hat",
+      "price": "$22",
+      "image": "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400",
+      "description": "Snapback cap with embroidered logo"
+    }
+  ]
+}

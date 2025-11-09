@@ -1,0 +1,24 @@
+{
+  "links": [
+    {
+      "platform": "Facebook",
+      "url": "https://facebook.com/bandname",
+      "icon": "fab fa-facebook-f"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://instagram.com/bandname",
+      "icon": "fab fa-instagram"
+    },
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/bandname",
+      "icon": "fab fa-twitter"
+    },
+    {
+      "platform": "TikTok",
+      "url": "https://tiktok.com/@bandname",
+      "icon": "fab fa-tiktok"
+    }
+  ]
+}

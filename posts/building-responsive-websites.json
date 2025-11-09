@@ -1,0 +1,12 @@
+{
+  "title": "Building Truly Responsive Websites in 2024",
+  "slug": "building-responsive-websites",
+  "excerpt": "Master the art of creating websites that look great on any device. Modern techniques and best practices for responsive design.",
+  "content": "# Building Truly Responsive Websites in 2024\n\nResponsive design isn't optional anymore—it's essential. Let's explore modern techniques for creating websites that work beautifully on any device.\n\n## Mobile-First Approach\n\nStart designing for mobile devices first, then scale up to larger screens. This ensures a great experience on smaller devices where space is limited.\n\n## Key Techniques\n\n### Fluid Layouts\nUse percentages and relative units instead of fixed pixels:\n```css\n.container {\n  width: 90%;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n```\n\n### Responsive Images\nEnsure images scale properly:\n```css\nimg {\n  max-width: 100%;\n  height: auto;\n}\n```\n\n### Media Queries\nTarget specific screen sizes:\n```css\n@media (min-width: 768px) {\n  .grid {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n```\n\n### Modern CSS Features\n- CSS Grid for complex layouts\n- Flexbox for flexible components\n- Container queries for component-based responsive design\n- CSS custom properties for theme switching\n\n## Testing\n\nTest your sites on:\n- Real devices when possible\n- Browser dev tools device emulation\n- Various browsers and screen sizes\n\n## Performance\n\nResponsive design should be fast:\n- Optimize images for different screen sizes\n- Use lazy loading for images\n- Minimize CSS and JavaScript\n- Consider using a CDN\n\n## Accessibility\n\nResponsive design goes hand-in-hand with accessibility:\n- Ensure touch targets are large enough (minimum 44x44px)\n- Use semantic HTML\n- Provide good color contrast\n- Test with screen readers\n\n## Conclusion\n\nResponsive design is about creating the best experience for users, regardless of their device. With modern CSS and a mobile-first mindset, you can build websites that work everywhere.",
+  "author": "Jane Doe",
+  "date": "2024-01-30",
+  "tags": ["responsive design", "css", "web development"],
+  "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop",
+  "readTime": "6 min read",
+  "featured": false
+}

@@ -1,0 +1,40 @@
+{
+  "platforms": [
+    {
+      "name": "Spotify",
+      "url": "https://open.spotify.com/artist/example",
+      "icon": "fab fa-spotify",
+      "color": "#1DB954"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://youtube.com/@bandname",
+      "icon": "fab fa-youtube",
+      "color": "#FF0000"
+    },
+    {
+      "name": "Apple Music",
+      "url": "https://music.apple.com/artist/example",
+      "icon": "fab fa-apple",
+      "color": "#FA243C"
+    },
+    {
+      "name": "Amazon Music",
+      "url": "https://music.amazon.com/artists/example",
+      "icon": "fab fa-amazon",
+      "color": "#FF9900"
+    },
+    {
+      "name": "SoundCloud",
+      "url": "https://soundcloud.com/bandname",
+      "icon": "fab fa-soundcloud",
+      "color": "#FF5500"
+    },
+    {
+      "name": "Bandcamp",
+      "url": "https://bandname.bandcamp.com",
+      "icon": "fab fa-bandcamp",
+      "color": "#629AA0"
+    }
+  ]
+}

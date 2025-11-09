@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "description": "Band website assets configuration",
+  "assets": [
+    {
+      "path": "content/band-config.json",
+      "type": "json",
+      "label": "Band Configuration",
+      "description": "Band name, tagline, and general configuration",
+      "handler": "handlers/band-config.js",
+      "maxSize": 5120,
+      "allowedExtensions": [".json"]
+    },
+    {
+      "path": "content/hero.json",
+      "type": "json",
+      "label": "Hero Section",
+      "description": "Hero section title, subtitle, and video URL",
+      "handler": "handlers/hero.js",
+      "maxSize": 2048,
+      "allowedExtensions": [".json"]
+    },
+    {
+      "path": "content/about.json",
+      "type": "json",
+      "label": "About Band",
+      "description": "Band description, story, and achievements",
+      "handler": "handlers/about.js",
+      "maxSize": 10240,
+      "allowedExtensions": [".json"]
+    },
+    {
+      "path": "content/members.json",
+      "type": "json",
+      "label": "Band Members",
+      "description": "Information about each band member",
+      "handler": "handlers/members.js",
+      "maxSize": 20480,
+      "allowedExtensions": [".json"]
+    },
+    {
+      "path": "content/gigs.json",
+      "type": "json",
+      "label": "Upcoming Gigs",
+      "description": "Calendar of upcoming shows and performances",
+      "handler": "handlers/gigs.js",
+      "maxSize": 20480,
+      "allowedExtensions": [".json"]
+    },
+    {
+      "path": "content/merch.json",
+      "type": "json",
+      "label": "Merchandise",
+      "description": "Band merchandise items",
+      "handler": "handlers/merch.js",
+      "maxSize": 20480,
+      "allowedExtensions": [".json"]
+    },
+    {
+      "path": "content/music-platforms.json",
+      "type": "json",
+      "label": "Music Platforms",
+      "description": "Links to music streaming platforms",
+      "handler": "handlers/music-platforms.js",
+      "maxSize": 5120,
+      "allowedExtensions": [".json"]
+    },
+    {
+      "path": "content/social.json",
+      "type": "json",
+      "label": "Social Links",
+      "description": "Social media links for the band",
+      "handler": "handlers/social.js",
+      "maxSize": 5120,
+      "allowedExtensions": [".json"]
+    }
+  ]
+}

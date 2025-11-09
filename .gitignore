@@ -1,0 +1,11 @@
+node_modules/
+package-lock.json
+.DS_Store
+*.log
+.env
+
+# Vite build outputs at root (generated from src/ and public/)
+/index.html
+/script.js
+/site-assets.json
+/.vite

@@ -1,0 +1,36 @@
+{
+  "gigs": [
+    {
+      "date": "2024-03-15",
+      "time": "8:00 PM",
+      "venue": "The Underground",
+      "location": "123 Main St, Downtown",
+      "ticketUrl": "https://example.com/tickets/1",
+      "description": "Join us for an electrifying night of original music and covers. Doors open at 7 PM."
+    },
+    {
+      "date": "2024-03-22",
+      "time": "9:00 PM",
+      "venue": "Rock & Roll Bar",
+      "location": "456 Music Ave, Midtown",
+      "ticketUrl": "https://example.com/tickets/2",
+      "description": "Special acoustic set featuring new material from our upcoming album."
+    },
+    {
+      "date": "2024-04-05",
+      "time": "7:30 PM",
+      "venue": "Summer Music Festival",
+      "location": "City Park, Central Stage",
+      "ticketUrl": "https://example.com/tickets/3",
+      "description": "We're excited to be part of this year's Summer Music Festival! Full band performance."
+    },
+    {
+      "date": "2024-04-12",
+      "time": "8:30 PM",
+      "venue": "The Basement",
+      "location": "789 Live St, Arts District",
+      "ticketUrl": "https://example.com/tickets/4",
+      "description": "Intimate venue, high energy show. Perfect for experiencing our music up close."
+    }
+  ]
+}
