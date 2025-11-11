@@ -92,7 +92,7 @@ async function loadContentFiles() {
             const response = await fetch(resolvePath(asset.path));
             if (!response.ok) continue;
 
-            if (asset.type === 'json' || asset.path.endsWith('.json')) {
+            if (asset.type === 'json' || asset.type === 'calendar' || asset.path.endsWith('.json')) {
                 contentData[asset.path] = await response.json();
             } else if (asset.type === 'text' && asset.path.endsWith('.md')) {
                 const text = await response.text();
@@ -190,8 +190,8 @@ async function loadComboAssets(asset) {
                     if (response.ok) {
                         comboData[baseName][ext] = await response.json();
                     }
-                } else if (assetType === 'text') {
-                    // Load text content
+                } else if (assetType === 'text' || assetType === 'event') {
+                    // Load text content (including iCalendar events)
                     const response = await fetch(resolvePath(filePath));
                     if (response.ok) {
                         comboData[baseName][ext] = await response.text();
