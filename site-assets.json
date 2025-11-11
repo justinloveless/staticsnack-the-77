@@ -148,7 +148,7 @@
     },
     {
       "path": "content/gigs.json",
-      "type": "json",
+      "type": "calendar",
       "label": "Upcoming Gigs",
       "description": "Calendar of upcoming shows and performances",
       "handler": "handlers/gigs.js",
