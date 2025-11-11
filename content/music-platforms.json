@@ -5,6 +5,12 @@
       "url": "https://youtube.com/@the77rockband?si=Q1khsBNZYNcWdlqY",
       "icon": "fab fa-youtube",
       "color": "#FF0000"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/the77band/",
+      "icon": "fab fa-faceboo",
+      "color": ""
     }
   ]
 }
