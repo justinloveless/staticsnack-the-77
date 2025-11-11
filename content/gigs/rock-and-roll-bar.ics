@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The 77 Band//Gigs//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:rock-and-roll-bar@the77band.com
+DTSTART:20240322T210000
+SUMMARY:The 77 Band at Rock & Roll Bar
+LOCATION:456 Music Ave, Midtown
+DESCRIPTION:Special acoustic set featuring new material from our upcoming album.
+URL:https://example.com/tickets/2
+END:VEVENT
+END:VCALENDAR

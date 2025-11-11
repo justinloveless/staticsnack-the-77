@@ -39,13 +39,25 @@
       "allowedExtensions": [".json"]
     },
     {
-      "path": "content/gigs.json",
-      "type": "calendar",
+      "path": "content/gigs",
+      "type": "directory",
       "label": "Upcoming Gigs",
       "description": "Calendar of upcoming shows and performances",
       "handler": "handlers/gigs.js",
-      "maxSize": 20480,
-      "allowedExtensions": [".json"]
+      "contains": {
+        "type": "combo",
+        "parts": [
+          {
+            "assetType": "event",
+            "allowedExtensions": [".ics"]
+          },
+          {
+            "assetType": "json",
+            "allowedExtensions": [".json"]
+          }
+        ]
+      },
+      "maxSize": 20480
     },
     {
       "path": "content/merch.json",

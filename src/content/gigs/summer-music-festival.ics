@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The 77 Band//Gigs//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:summer-music-festival@the77band.com
+DTSTART:20240405T193000
+SUMMARY:The 77 Band at Summer Music Festival
+LOCATION:City Park, Central Stage
+DESCRIPTION:We're excited to be part of this year's Summer Music Festival! Full band performance.
+URL:https://example.com/tickets/3
+END:VEVENT
+END:VCALENDAR

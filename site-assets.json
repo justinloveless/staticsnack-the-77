@@ -147,60 +147,52 @@
       }
     },
     {
-      "path": "content/gigs.json",
-      "type": "calendar",
+      "path": "content/gigs",
+      "type": "directory",
       "label": "Upcoming Gigs",
       "description": "Calendar of upcoming shows and performances",
       "handler": "handlers/gigs.js",
+      "contains": {
+        "type": "combo",
+        "parts": [
+          {
+            "assetType": "event",
+            "allowedExtensions": [".ics"]
+          },
+          {
+            "assetType": "json",
+            "allowedExtensions": [".json"]
+          }
+        ]
+      },
       "maxSize": 20480,
-      "allowedExtensions": [
-        ".json"
-      ],
       "schema": {
         "type": "object",
         "properties": {
-          "gigs": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "time": {
-                  "type": "string",
-                  "format": "time"
-                },
-                "venue": {
-                  "type": "string"
-                },
-                "location": {
-                  "type": "string"
-                },
-                "ticketUrl": {
-                  "type": "string",
-                  "format": "uri"
-                },
-                "description": {
-                  "type": "string",
-                  "multiline": true
-                }
+          "event": {
+            "type": "string",
+            "description": "iCalendar event data"
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "venue": {
+                "type": "string"
               },
-              "required": [
-                "date",
-                "time",
-                "venue",
-                "location",
-                "ticketUrl",
-                "description"
-              ]
-            }
+              "ticketUrl": {
+                "type": "string",
+                "format": "uri"
+              },
+              "featured": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "venue",
+              "ticketUrl"
+            ]
           }
-        },
-        "required": [
-          "gigs"
-        ]
+        }
       }
     },
     {

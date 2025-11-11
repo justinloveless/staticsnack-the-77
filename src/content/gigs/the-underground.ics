@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The 77 Band//Gigs//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:the-underground@the77band.com
+DTSTART:20240315T200000
+SUMMARY:The 77 Band at The Underground
+LOCATION:123 Main St, Downtown
+DESCRIPTION:Join us for an electrifying night of original music and covers. Doors open at 7 PM.
+URL:https://example.com/tickets/1
+END:VEVENT
+END:VCALENDAR

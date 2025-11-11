@@ -166,8 +166,8 @@ async function loadComboAssets(asset) {
                     if (response.ok) {
                         comboData[baseName][ext] = await response.json();
                     }
-                } else if (assetType === 'text') {
-                    // Load text content
+                } else if (assetType === 'text' || assetType === 'event') {
+                    // Load text content (including iCalendar events)
                     const response = await fetch(filePath);
                     if (response.ok) {
                         comboData[baseName][ext] = await response.text();

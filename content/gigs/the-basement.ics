@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The 77 Band//Gigs//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:the-basement@the77band.com
+DTSTART:20240412T203000
+SUMMARY:The 77 Band at The Basement
+LOCATION:789 Live St, Arts District
+DESCRIPTION:Intimate venue, high energy show. Perfect for experiencing our music up close.
+URL:https://example.com/tickets/4
+END:VEVENT
+END:VCALENDAR
